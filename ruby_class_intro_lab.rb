@@ -70,36 +70,42 @@ class Starship
 	end
 end
 
-x_wing = Starship.new "X Wing", "Nick"
+# x_wing = Starship.new "X Wing", "Nick"
 
-x_wing.set_top_speed 100
-puts x_wing.get_top_speed
-puts x_wing.accelerate_to 90
+# x_wing.set_top_speed 100
+# puts x_wing.get_top_speed
+# puts x_wing.accelerate_to 120
 
 #DICE 
 class Dice
 
 	attr_accessor :number_of_sides
 
+
 	def initialize number_of_sides
 		@number_of_sides = number_of_sides
 		@previous_rolls = []
 	end
 
-	def roll
-		rand(1..@number_of_sides)
+	def roll	
+		rolling = rand(1..@number_of_sides)
+		@previous_rolls.push(rolling)
+		puts rolling
+
 	end
 
 	def get_rolls
-		@previous_rolls.push(roll)
+		@previous_rolls
 	end
 end
 
 # dice1 = Dice.new 6 
 
-# p dice1.get_rolls
-# p dice1.get_rolls
-# p dice1.get_rolls
+# puts dice1.roll
+# puts dice1.roll
+# puts dice1.roll
+# puts dice1.roll
+
 # p dice1.get_rolls
 
 
